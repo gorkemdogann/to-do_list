@@ -1,0 +1,17 @@
+{% extends 'todoapp/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Giriş Yap</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-success">Giriş</button>
+    </form>
+
+    <span> <b> Hesabınız varsa giriş yapmak için <a href="{% url 'register' %}"> tıklayınız. </a> </b> </span>
+</div>
+{% endblock content %}

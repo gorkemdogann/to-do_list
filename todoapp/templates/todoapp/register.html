@@ -1,0 +1,29 @@
+{% extends 'todoapp/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Kayıt Ol</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <button style="margin-top:17px;" type="submit" class="btn btn-success">Kayıt Ol</button>
+
+    </form>
+    <span> <b> Hesabınız var mı? <a href="{% url 'login' %}"> tıklayınız. </a> </b> </span>
+
+</div>
+
+
+
+
+{% endblock content %}

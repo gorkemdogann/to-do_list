@@ -1,0 +1,16 @@
+{% extends 'todoapp/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Geri</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <p>Görevi silmek istediğinizden emin misiniz? '<b>{{task}}</b>'</p>
+        <button type="submit" class="btn btn-danger">Sil</button>
+    </form>
+</div>
+
+{% endblock content %}
